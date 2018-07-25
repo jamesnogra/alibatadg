@@ -1,0 +1,26 @@
+@font-face {
+	font-family: 'QuarcaNormLight';
+	src: url('fonts/QuarcaNormLight.otf') format('opentype');
+}
+
+body, html {
+	font-family: 'QuarcaNormLight', 'Segoe UI', sans-serif;
+}
+
+#display-sample-container {
+	padding: 10px;
+}
+
+#display-images-container {
+	width: 100%;
+	transform-x: translate(0%, -50%);
+}
+
+.display-image-container {
+	border: 2px solid #ffeb3b;
+}
+
+/*just for the size of the canvas. other styling is at css/draw.css*/
+#sheet {
+	border: 2px solid #ffeb3b;
+}
