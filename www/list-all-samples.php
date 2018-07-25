@@ -1,9 +1,8 @@
 <?php
 
-	echo '<h2><a href="download-all-samples.php">Download All</a></h2>';
-
 	$dir    = 'temp';
 	$samples = scandir($dir);
+	echo '<h2><a href="download-all-samples.php">Download All '.count($samples).'</a></h2>';
 
 	$last_char = '';
 	foreach ($samples as $pic) {

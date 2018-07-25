@@ -34,7 +34,7 @@ function submitAndUpload() {
     var pic = document.getElementById("sheet-small").toDataURL("image/png");
     pic = pic.replace(/^data:image\/(png|jpg);base64,/, "");
     // Sending the image data to Server
-    $.post("http://64.137.221.224/test-upload.php", {'curent_character':curent_character, 'full_name':full_name, 'imageData':pic}, function(result) {
+    $.post("http://alibatadg.iamcebu.com/upload-image.php", {'curent_character':curent_character, 'full_name':full_name, 'imageData':pic}, function(result) {
 		//$( ".result" ).html( data );
 	});
 	clearCanvas();
