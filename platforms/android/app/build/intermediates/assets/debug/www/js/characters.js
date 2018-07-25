@@ -61,7 +61,8 @@ function submitAndUpload() {
 
 function showCharacter(letter) {
 	curent_character = letter;
-	document.getElementById("display-meaning").innerHTML = curent_character.replace('_', '/');
+	document.getElementById("display-meaning-1").innerHTML = curent_character.replace('_', '/');
+	document.getElementById("display-meaning-2").innerHTML = curent_character.replace('_', '/');
 	for (var x=1; x<=3; x++) {
 		document.getElementById("display-image-"+x).innerHTML = '<img class="display-image-container" src="images/characters/'+curent_character+'.'+x+'.bmp" width="150" height="150" />';
 		//document.getElementById("display-image-"+x).style.backgroundImage = "url('images/characters/"+curent_character+"."+x+".bmp')";
