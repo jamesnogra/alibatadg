@@ -1,10 +1,10 @@
 "use strict";
-var context = document.getElementById('sheet').getContext("2d");
+/*var context = document.getElementById('sheet').getContext("2d");
 var canvas = document.getElementById('sheet');
 context = canvas.getContext("2d");
 context.strokeStyle = "#000000";
 context.lineJoin = "round";
-context.lineWidth = 35;
+context.lineWidth = 35;*/
 
 var clickX = [];
 var clickY = [];
@@ -153,5 +153,5 @@ function clearCanvas() {
 }
 
 
-canvas.addEventListener('mousedown', mouseWins);
-canvas.addEventListener('touchstart', touchWins);
+//canvas.addEventListener('mousedown', mouseWins);
+//canvas.addEventListener('touchstart', touchWins);

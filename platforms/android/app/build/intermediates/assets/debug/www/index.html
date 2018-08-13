@@ -15,7 +15,7 @@
 
 	<div class="w3-container w3-yellow">
 		<center>
-			<h1>Alibata (Baybayin) Character “<span id="display-meaning-1">[CHAR]</span>”</h1>
+			<h3>Baybayin Character “<span id="display-meaning-1">[CHAR]</span>”</h3>
 		</center>
 	</div>
 
@@ -38,13 +38,14 @@
 		        <canvas id="sheet-small" width="28" height="28"></canvas>
 		    </div>
 	    </div>
-	    <div class="w3-center">
+	    <div class="w3-center" id="bottom-buttons">
 	    	<button class="w3-button w3-yellow w3-xlarge" onclick="clearCanvas();"><i class="fa fa-trash"></i> Erase Everything</button>
 	    	<button class="w3-button w3-yellow w3-xlarge" onclick="submitAndUpload();"><i class="fa fa-check"></i> Submit</button>
 	    </div>
 	</div>
 
 	<script src="js/jquery.min.js"></script>
+	<script src="js/custom-alert.js"></script>
 	<script src="js/draw.js"></script>
 	<script src="js/characters.js"></script>
 

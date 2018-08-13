@@ -19,6 +19,29 @@ var all_chars = [
 	'ya', 'ye_yi', 'yo_yu', 'y',
 ];
 
+var canvas, context;
+
+$(document).ready(function() {
+	var $window = $(window);
+	var temp_width = $window.width();
+	var temp_height = $window.height();
+	var temp_dim = (temp_width<temp_height) ? temp_width : temp_height;
+	temp_dim = temp_dim - 50;
+	$("#sheet").attr("width", temp_dim);
+	$("#sheet").attr("height", temp_dim);
+	context = document.getElementById('sheet').getContext("2d");
+	canvas = document.getElementById('sheet');
+	context = canvas.getContext("2d");
+	context.strokeStyle = "#000000";
+	context.lineJoin = "round";
+	context.lineWidth = temp_dim/14;
+	canvas.addEventListener('mousedown', mouseWins);
+	canvas.addEventListener('touchstart', touchWins);
+	if (temp_dim<=480) {
+		$('.w3-button').removeClass("w3-xlarge");
+	}
+});
+
 function submitAndUpload() {
 	full_name = document.getElementById("full-name").value;
 	if (full_name.length < 5) {
@@ -34,7 +57,7 @@ function submitAndUpload() {
     var pic = document.getElementById("sheet-small").toDataURL("image/png");
     pic = pic.replace(/^data:image\/(png|jpg);base64,/, "");
     // Sending the image data to Server
-    $.post("http://64.137.221.224/test-upload.php", {'curent_character':curent_character, 'full_name':full_name, 'imageData':pic}, function(result) {
+    $.post("http://alibatadg.iamcebu.com/upload-image.php", {'curent_character':curent_character, 'full_name':full_name, 'imageData':pic}, function(result) {
 		//$( ".result" ).html( data );
 	});
 	clearCanvas();
@@ -61,9 +84,10 @@ function submitAndUpload() {
 
 function showCharacter(letter) {
 	curent_character = letter;
-	document.getElementById("display-meaning").innerHTML = curent_character.replace('_', '/');
+	document.getElementById("display-meaning-1").innerHTML = curent_character.replace('_', '/');
+	document.getElementById("display-meaning-2").innerHTML = curent_character.replace('_', '/');
 	for (var x=1; x<=3; x++) {
-		document.getElementById("display-image-"+x).innerHTML = '<img class="display-image-container" src="images/characters/'+curent_character+'.'+x+'.bmp" width="150" height="150" />';
+		document.getElementById("display-image-"+x).innerHTML = '<img class="display-image-container" src="images/characters/'+curent_character+'.'+x+'.bmp" width="29%" />';
 		//document.getElementById("display-image-"+x).style.backgroundImage = "url('images/characters/"+curent_character+"."+x+".bmp')";
 	}
 }

@@ -24,3 +24,9 @@ body, html {
 #sheet {
 	border: 2px solid #ffeb3b;
 }
+
+#bottom-buttons {
+	position: fixed;
+	bottom: 5px;
+	width: 100%;
+}
