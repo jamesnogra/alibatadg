@@ -26,7 +26,7 @@
 
             // Add current file to archive
             $zip->addFile($filePath, $relativePath);
-            echo 'Adding file ' . $filePath . '.<br />';
+            //echo 'Adding file ' . $filePath . '.<br />';
         }
     }
 

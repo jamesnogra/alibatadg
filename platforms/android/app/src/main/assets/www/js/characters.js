@@ -44,7 +44,7 @@ $(document).ready(function() {
 
 function submitAndUpload() {
 	full_name = document.getElementById("full-name").value;
-	if (full_name.length < 5) {
+	if (full_name.length < 3) {
 		alert("Please enter your full name!");
 		document.getElementById("full-name").focus();
 		return;
@@ -61,14 +61,25 @@ function submitAndUpload() {
 		//$( ".result" ).html( data );
 	});
 	clearCanvas();
-	at_index++;
 	if (at_index>=all_chars.length) {
 		at_index = 0;
-		shuffleArr(all_chars);
+		$('#full-name').val('');
+		try {
+			navigator.notification.alert(
+	            'You are done for now. Thank you',  // message
+	            null,         // callback
+	            'Complete',            // title
+	            'OK'                  // buttonName
+	        );
+		} catch(err) {
+			alert("You are done for now. Thank you!");
+		}
+		//shuffleArr(all_chars);
 	}
 	curent_character = all_chars[at_index];
 	console.log("Showing character '"+curent_character+"' at index "+at_index+". Total characters is "+all_chars.length+".");
 	showCharacter(curent_character);
+	at_index++;
 
     /*$.ajax({
         type: 'POST',
@@ -86,6 +97,7 @@ function showCharacter(letter) {
 	curent_character = letter;
 	document.getElementById("display-meaning-1").innerHTML = curent_character.replace('_', '/');
 	document.getElementById("display-meaning-2").innerHTML = curent_character.replace('_', '/');
+	document.getElementById("progress-counter").innerHTML = (at_index+1) + '/' + (all_chars.length);
 	for (var x=1; x<=3; x++) {
 		document.getElementById("display-image-"+x).innerHTML = '<img class="display-image-container" src="images/characters/'+curent_character+'.'+x+'.bmp" width="29%" />';
 		//document.getElementById("display-image-"+x).style.backgroundImage = "url('images/characters/"+curent_character+"."+x+".bmp')";
@@ -105,5 +117,5 @@ function shuffleArr(array) {
 	return array;
 }
 
-shuffleArr(all_chars);
+//shuffleArr(all_chars);
 showCharacter(all_chars[at_index]);
