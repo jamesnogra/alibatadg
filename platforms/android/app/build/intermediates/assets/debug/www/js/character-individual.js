@@ -44,7 +44,7 @@ $(document).ready(function() {
 	//put all the characters to the dropdown
 	var temp_str = '';
 	for (var x=0; x<all_chars.length; x++) {
-		temp_str += '<option value="'+x+'">'+all_chars[x].replace('_', ' / ')+'</option>';
+		temp_str += '<option value="'+x+'">'+all_chars[x]+'</option>';
 	}
 	document.getElementById("selected-character").innerHTML = temp_str;
 	$('#selected-character').change(function() {
