@@ -4,7 +4,7 @@
         $imgData = base64_decode($_REQUEST['imageData']);
 
         // Path where the image is going to be saved
-        $filePath = 'temp/'.$_POST['curent_character'] . '.' . generateRandomString(4) . '-' . $_POST['full_name'] . '.jpg';
+        $filePath = 'temp/'.$_POST['curent_character'] . '.' . generateRandomString(4) . '-' . $_POST['full_name'] . '.png';
         // Delete previously uploaded image
         if (file_exists($filePath)) { unlink($filePath); }
 

@@ -54,7 +54,7 @@ function submitAndUpload() {
 	var source_canvas = document.getElementById('sheet');
 	dest_context.drawImage(source_canvas, 0, 0,28,28);
 	// Generate the image data
-    var pic = document.getElementById("sheet-small").toDataURL("image/jpeg", 1.0);
+    var pic = document.getElementById("sheet-small").toDataURL("image/png");
     pic = pic.replace(/^data:image\/(png|jpg);base64,/, "");
     // Sending the image data to Server
     $.post("http://alibatadg.iamcebu.com/upload-image.php", {'curent_character':curent_character, 'full_name':full_name, 'imageData':pic}, function(result) {
